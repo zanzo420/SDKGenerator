@@ -62,7 +62,7 @@ namespace PlayFab.Internal
         }
     }
 
-    public static class PlayFabPackager
+    public class PlayFabPackager
     {
         private static readonly string[] SdkAssets = {
             "Assets/PlayFabSDK",
@@ -75,7 +75,7 @@ namespace PlayFab.Internal
         private static readonly string TestPackageName = "com.playfab.service";
 
         #region Utility Functions
-        private static void Setup()
+        public static void Setup()
         {
             Type setupPlayFabExampleType = typeof(PlayFabPackager).Assembly.GetType("SetupPlayFabExample");
             MethodInfo setupMethod = null;
