@@ -48,6 +48,8 @@ public class PlayFabApiTest
         String errorMessage = CompileErrorsFromResult(result);
         if (expectSuccess)
         {
+            if (errorMessage != null)
+                System.out.println(result.Error);
             assertNull(errorMessage, result.Error);
             assertNotNull(errorMessage, result.Result);
         }
