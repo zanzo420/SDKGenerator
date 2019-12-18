@@ -152,7 +152,7 @@ public class PlayFabApiTest
      *  CLIENT API
      *  Log in or create a user, track their PlayFabId
      */
-    /*@Test
+    @Test
     public void LoginOrRegister()
     {
         PlayFabClientModels.LoginWithCustomIDRequest request = new PlayFabClientModels.LoginWithCustomIDRequest();
@@ -161,10 +161,10 @@ public class PlayFabApiTest
         request.CreateAccount = true;
 
         PlayFabResult<PlayFabClientModels.LoginResult> result = PlayFabClientAPI.LoginWithCustomID(request);
-        VerifyResult(result, true);
-        assertNotNull(result.Result.PlayFabId);
+        //VerifyResult(result, true);
+        //assertNotNull(result.Result.PlayFabId);
         playFabId = result.Result.PlayFabId;
-    }*/
+    }
 
     /**
      *  CLIENT API
