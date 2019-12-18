@@ -129,7 +129,7 @@ public class PlayFabApiTest
      *  Try to deliberately register a user with an invalid email and password
      *    Verify that errorDetails are populated correctly.
      */
-    /*@Test
+    @Test
     public void InvalidRegistration()
     {
         PlayFabClientModels.RegisterPlayFabUserRequest request = new PlayFabClientModels.RegisterPlayFabUserRequest();
@@ -146,7 +146,7 @@ public class PlayFabApiTest
         String errorDetails = CompileErrorsFromResult(result);
         assertTrue("Expected an error about email: " + errorDetails, errorDetails.toLowerCase().contains(expectedEmailMsg));
         assertTrue("Expected an error about password: " + errorDetails, errorDetails.toLowerCase().contains(expectedPasswordMsg));
-    }*/
+    }
 
     /**
      *  CLIENT API
@@ -161,8 +161,8 @@ public class PlayFabApiTest
         request.CreateAccount = true;
 
         PlayFabResult<PlayFabClientModels.LoginResult> result = PlayFabClientAPI.LoginWithCustomID(request);
-        //VerifyResult(result, true);
-        //assertNotNull(result.Result.PlayFabId);
+        VerifyResult(result, true);
+        assertNotNull(result.Result.PlayFabId);
         playFabId = result.Result.PlayFabId;
     }
 
