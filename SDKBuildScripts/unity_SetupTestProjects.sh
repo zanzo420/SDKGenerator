@@ -19,7 +19,6 @@ DeleteUnityCruft () {
     Nuke "ProjectSettings"
     Nuke "Temp"
     Nuke "testBuilds"
-    mkdir testBuilds
     Nuke "*.csproj"
     Nuke "*.sln"
 }
@@ -90,7 +89,6 @@ MainScript () {
 }
 
 CheckDefault WORKSPACE "C:/proj"
-CheckDefault SHARED_WORKSPACE "C:/depot"
 CheckDefault SdkName "UnitySDK"
 CheckDefault UNITY_VERSION "Unity193"
 
