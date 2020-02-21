@@ -12,7 +12,8 @@ if [ "$#" -ne 2 ]; then
 fi
  
 # Unreal Path, to change depending on your workspace setup.
-uePath="/Users/Shared/Epic Games"
+#uePath="/Users/Shared/Epic Games"
+uePath="C:/Program Files/Epic Games"
 
 # Unreal Version, to change on every unreal version
 ueVersion="<%- ueTargetVersion %>"
@@ -29,4 +30,3 @@ cd "$uatPath"
 
 # The actual build command. To adapt depending on the needs.
 . ./RunUAT.sh -ScriptsForProject="$uprojdir" BuildCookRun -nocompile -editorrecompile -installed -nop4 -project="$uprojdir" -cook -stage -archive -archivedirectory="$archivePath" -package -clientconfig=Development -ue4exe=UE4Editor -pak -prereqs -nodebuginfo -targetplatform=IOS -build -utf8output
-
