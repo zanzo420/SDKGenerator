@@ -11,17 +11,17 @@ if [ "$#" -ne 2 ]; then
 fi
 
 #be safe and clean up old archives
-rm -fdr $archivePath/IOS
+rm -fdr "$archivePath/IOS"
 
 #inject the testTitleData into the project prior to build
-cp $PF_TEST_TITLE_DATA_JSON $projectPath/Content/TestTitleData
+cp $PF_TEST_TITLE_DATA_JSON "$projectPath/Content/TestTitleData"
 
 #build the archive
-. ./BuildIOS.sh $archivePath $projectPath
+. ./BuildIOS.sh "$archivePath" "$projectPath"
 buildResult=$?
 
 #remove the testTitleData from the project now that the build is finished
-rm -f $projectPath/Content/TestTitleData/testTitleData.json
+rm -f "$projectPath/Content/TestTitleData/testTitleData.json"
 
 #exit if the build failed
 if [ $buildResult -ne 0 ]; then 
@@ -29,7 +29,7 @@ if [ $buildResult -ne 0 ]; then
     exit 1
 fi
 
-cd $archivePath/IOS
+cd "$archivePath/IOS"
 
 #remove a preexisting payload folder from a prior unzip if it exists (it really shouldn't tho)
 rm -fdr Payload
