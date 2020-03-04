@@ -43,6 +43,7 @@ public:
         InOutTests.ADD_TEST(Cloud Script (Blueprint), CloudScript);
         InOutTests.ADD_TEST(Cloud Script Error (Blueprint), CloudScriptError);
         InOutTests.ADD_TEST(Write Event (Blueprint), WriteEvent);
+        InOutTests.ADD_TEST(WaitAWhile (Blueprint), WaitAwhile);
 <% }
 if (hasServerOptions) { %>
         // BUG 41305 This test fails in AppCenter for Android
@@ -60,6 +61,14 @@ if (hasServerOptions) { %>
         testContext->EndTest(PlayFabApiTestFinishState::FAILED, "Unexpected error: " + error.ErrorMessage + "\n" + error.ErrorDetails);
     }
     
+        /// <summary> 
+        /// CLIENT API
+        /// Try to deliberately wait awhile,
+        ///   and verify that the tests don't crash right away as we have seen.
+        /// </summary>
+        UFUNCTION()
+        void WaitAwhile(UPlayFabTestContext* testContext);
+
 <% if (hasClientOptions) { %>
     /// <summary> 
     /// CLIENT API
